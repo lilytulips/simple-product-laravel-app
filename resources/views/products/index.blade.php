@@ -7,7 +7,16 @@
 <body>
     <div class="container">
         <h1 class="mt-5">Products</h1>
-        <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Create</a>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <a href="{{ route('products.create') }}" class="btn btn-primary">Create</a>
+
+            <form action="{{ route('products.index') }}" method="GET" class="form-inline">
+                <div class="form-group mr-2">
+                    <input type="text" class="form-control" id="search" name="search" placeholder="Search Product Name">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
